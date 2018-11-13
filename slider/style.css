@@ -1,0 +1,107 @@
+:root{
+    --slider-width:300px;
+    --slider-height:150px;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.slider-wrapper{
+width:var(--slider-width);
+height: var(--slider-height);
+overflow: hidden;
+margin: 0 auto;
+position: relative;
+}
+.slider{
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    width: 10000px;
+    font-size: 0;
+    transition: all .5s linear;
+}
+.slider__item{
+    display: inline-block;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    transition: all 1s linear;
+}
+.slider__img{
+    display: block; 
+    width: var(--slider-width);
+    height: var(--slider-height);
+}
+.control{  
+    margin: 10px auto; 
+    width: 300px; 
+    text-align: center;
+}
+.control a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #fff;
+}
+:target{
+    transition: all 1s linear;
+}
+/* ------- second slider  ---------------- */
+[type="radio"]{
+    display: none;
+}
+.wrap-control{
+    position: absolute;
+    bottom: 0;
+    left: 37%;
+    z-index: 5;
+}
+.wrap-control label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.radio-1:checked ~ .wrap-control .control-1,
+.radio-2:checked ~ .wrap-control .control-2,
+.radio-3:checked ~ .wrap-control .control-3,
+.radio-4:checked ~ .wrap-control .control-4{
+    background-color:violet;
+}
+.radio-1:checked ~ .slider{
+    transform: translateX(0);
+}
+.radio-2:checked ~ .slider{
+    transform: translateX(-300px);
+
+}
+.radio-3:checked ~ .slider{
+    transform: translateX(-600px); 
+}
+.radio-4:checked ~ .slider{
+    transform: translateX(-900px); 
+}
+
+/* arrow */
+.arrow-1,
+.arrow-2 {
+    position: absolute;
+    top: 40%;
+    width: 10px;
+    height: 10px; 
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+}
+.arrow-1{
+    left: 5px; 
+}
+.arrow-2{
+    right: 5px; 
+}
+ 

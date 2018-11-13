@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p class="title">control with <b>a:target</b></p>
+    <!-- Create wrapper for slider -->
+    <div class="slider-wrapper">
+      <ul class="slider">
+        <li class="slider__item" id="slide-1">
+          <img src="./img/1.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item" id="slide-2">
+          <img src="./img/2.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item" id="slide-3">
+          <img src="./img/3.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item" id="slide-4">
+          <img src="./img/4.jpg" alt="" class="slider__img" />
+        </li>
+      </ul>
+    </div>
+    <!-- control target -->
+    <div class="control">
+      <a href="#slide-1"></a> <a href="#slide-2"></a> <a href="#slide-3"></a>
+      <a href="#slide-4"></a>
+    </div>
+    <hr />
+    <hr />
+    <hr />
+    <!-- CONTROL WITH RADIO -->
+    <p class="title">control with <b>radio:checked</b></p>
+    <div class="slider-wrapper">
+      <input
+        id="control-1"
+        class="radio-1"
+        name="slider"
+        type="radio"
+        checked
+      />
+      <input id="control-2" class="radio-2" name="slider" type="radio" />
+      <input id="control-3" class="radio-3" name="slider" type="radio" />
+      <input id="control-4" class="radio-4" name="slider" type="radio" />
+
+      <div class="wrap-control">
+        <label class="control-1" for="control-1"></label>
+        <label class="control-2" for="control-2"></label>
+        <label class="control-3" for="control-3"></label>
+        <label class="control-4" for="control-4"></label>
+      </div>
+
+      <!-- slider -->
+      <ul class="slider">
+        <li class="slider__item sl-1" id="slide-1">
+          <img src="./img/1.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item sl-2" id="slide-2">
+          <img src="./img/2.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item sl-3" id="slide-3">
+          <img src="./img/3.jpg" alt="" class="slider__img" />
+        </li>
+        <li class="slider__item sl-4" id="slide-4">
+          <img src="./img/4.jpg" alt="" class="slider__img" />
+        </li>
+      </ul>
+    </div> 
+  </body>
+</html>
