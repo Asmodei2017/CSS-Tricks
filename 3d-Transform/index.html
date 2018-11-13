@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3d Transform</title>
+  </head>
+  <body>
+    <style>
+      .container {
+        /* How pronounced should the 3D effects be */
+        perspective: 800px;  
+        margin: 50px auto;
+        width: 300px;
+        height: 150px; 
+        position: relative;
+      }
+
+      .box-front,
+      .box-back {
+        /* Enable 3D transforms */
+        transform-style: preserve-3d; 
+        backface-visibility: hidden; 
+        width: 300px;
+        height: 150px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #476af1;
+        /* Animate the transitions */
+        transition: 0.8s;
+        text-align: center;
+        color: #fff;
+      }
+      .box-back {
+        /* The back side is flipped 180 deg by default */
+        transform: rotateY(180deg); 
+        background-color: #7e0002;
+      }
+      .container:hover .box-front {
+        /* When the container is hovered, flip the front side and hide it .. */
+        transform: rotateY(180deg); 
+      }
+      .container:hover .box-back {
+        /* .. at the same time flip the back side into visibility */
+        transform: rotateY(360deg); 
+      }
+    </style>
+
+    <div class="container">
+      <div class="box-front">FRONT SIDE</div>
+      <div class="box-back">BACK SIDE</div>
+    </div>
+  </body>
+</html>
