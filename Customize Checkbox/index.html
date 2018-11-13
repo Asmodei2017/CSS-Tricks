@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Customize Checkbox</title>
+  </head>
+  <body>
+    <style>
+      .checkbox {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 13px;
+        margin-right: 10px;
+        line-height: 18px;
+      }
+      /* hide  */
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        display: none;
+      }
+
+      /*customize label  */
+      .checkbox:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        background-color: #0088cc;
+        color: #f3f3f3;
+        text-align: center;
+        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3),
+          0px 1px 0px 0px rgba(255, 255, 255, 0.8);
+        border-radius: 3px;
+      }
+      /* customize checked  */
+      input[type="checkbox"]:checked + .checkbox:before,
+      input[type="radio"]:checked + .checkbox:before {
+        content: "\2713";
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+      }
+    </style>
+
+    <form>
+        <h2>Choose multiple variant</h2>
+      <input id="Option" type="checkbox" />
+      <label class="checkbox" for="Option"> Option 1 </label>
+
+      <input id="option2" type="checkbox" />
+      <label class="checkbox" for="option2"> Option 2 </label>
+
+      <input id="option3" type="checkbox" />
+      <label class="checkbox" for="option3"> Option 3 </label>
+
+      <input id="option4" type="checkbox" />
+      <label class="checkbox" for="option4"> Option 4 </label>
+
+      <hr />
+<h2>Choose ONE variant</h2>
+      <input id="Option-5" name="one-name" type="radio" />
+      <label class="checkbox" for="Option-5"> Option 1 </label>
+
+      <input id="option-6" name="one-name" type="radio" />
+      <label class="checkbox" for="option-6"> Option 2 </label>
+
+      <input id="option-7" name="one-name" type="radio" />
+      <label class="checkbox" for="option-7"> Option 3 </label>
+
+      <input id="option-8" name="one-name" type="radio" />
+      <label class="checkbox" for="option-8"> Option 4 </label>
+    </form>
+  </body>
+</html>
