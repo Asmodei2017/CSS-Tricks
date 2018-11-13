@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tooltip</title>
+  </head>
+  <body>
+    <style>
+        body{
+            padding-top: 200px;
+        }
+      .tooltip {
+        position: relative;
+        margin: 200px;
+      }
+      .tooltip:before,
+      .tooltip:after {
+        position: absolute;
+        transition: all 0.5s ease;
+        margin-left: -100px;
+        left: 50%;
+        bottom: 300%;
+        display: block;
+        color: #000;
+        opacity: 0; 
+      }
+      .tooltip:before {
+          /* take value attr title */
+        content: attr(title);
+        border: solid 1px #0088cc;
+        background: #fff;
+        width: 200px;
+        text-align: center;
+        z-index: 2;
+        font-size: 13px;
+        line-height: 18px;
+        padding: 5px;
+      }
+      .tooltip:after {
+        content: "\25c6";
+        margin-left: 0;
+        margin-top: 10px;
+        width: 15px;
+        height: 15px;
+        z-index: 1;
+        line-height: 28px;
+        color: #0088cc;
+        font-size: 20px;
+      }
+      .tooltip:hover:before,
+      .tooltip:hover:after {
+        bottom: 150%;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s ease;
+
+      }
+    </style>
+<!-- we can make a tooltip for any element -->
+<!-- text tooltip we will take with element attr title -->
+    <a
+      href="#tooltip"
+      title="This tutorials Working fine in All most latest browser"
+      class="tooltip"
+      >Tooltip</a
+    >
+  </body>
+</html>
