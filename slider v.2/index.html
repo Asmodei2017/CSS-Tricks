@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slider v.2</title>
+    <meta
+      name="wievport"
+      content="width=max-device,initial-scale=1.0,maximum-scale=1.0,user-scale=0"
+    />
+  </head>
+  <body>
+    <style>
+        /* общий контейнер  */
+      .wrap {
+        height: 300px;
+        margin: 50px auto 0;
+        position: relative;
+        width: 550px;
+      }
+      /* скрыть все инпуты от отображения */
+      .wrap > input {
+        display: none;
+      }
+      /* стили для контейнара слайдера */
+      .slider {
+        background-color: #333;
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+        width: inherit;
+      }
+      /* задаем абсолютное позиционирование , все слады ложатся стопкой, затем скрываем их через прозрачность */
+      .slides {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        z-index: 0;
+        opacity: 0;
+        transition: 1s;
+      }
+      /* для отображения даем цвет слайдам */
+      .img1 {
+        background: rgb(51, 18, 48);
+        opacity: 1;
+      }
+      .img2 {
+        background: green;
+      }
+      .img3 {
+        background: red;
+      }
+      /* блок управления  */
+      .wrap .control {
+        position: absolute;
+        margin-left: -50px;
+        left: 50%;
+        bottom: 0;
+        z-index: 10;
+      }
+      /* стили для контролов */
+      .wrap label {
+        cursor: pointer;
+        display: inline-block;
+        height: 8px;
+        margin: 10px;
+        position: relative;
+        width: 8px;
+        border-radius: 50%;
+      }
+      /* белые маркеры кружочки для общего отображения */
+      .wrap label::after {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        height: 12px;
+        width: 12px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+      }
+      /* если чекнут инпут то идем по коду и ищем блок с label и отмечаем нужный label*/
+      #point1:checked ~ .control label:nth-of-type(1),
+      #point2:checked ~ .control label:nth-of-type(2),
+      #point3:checked ~ .control label:nth-of-type(3) {
+        background-color: #fff;
+      }
+     /* при чекнутом инпуте идем по коду и отображаем слайд (прозрачность и Z-индекс) который СООТВЕТСТВУЕТ чекнутому инпуту  */
+      #point1:checked ~ .slider > .img1,
+      #point2:checked ~ .slider > .img2,
+      #point3:checked ~ .slider > .img3 {
+        opacity: 1;
+        z-index: 1;
+      }
+    </style>
+
+    <div class="wrap">
+      <!-- checkbox -->
+      <input type="radio" name="slides" id="point1" checked />
+      <input type="radio" name="slides" id="point2" />
+      <input type="radio" name="slides" id="point3" />
+
+      <!-- slider box with slides? text or image -->
+      <div class="slider">
+        <div class="slides img1"></div>
+        <div class="slides img2"></div>
+        <div class="slides img3"></div>
+      </div>
+      <!-- label as control -->
+      <div class="control">
+        <label for="point1"></label> <label for="point2"></label>
+        <label for="point3"></label>
+      </div>
+    </div>
+  </body>
+</html>
