@@ -4,20 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <title>Pure css based fullscreen slider Demo | HTMLlion Demo</title>
-<meta name="Description" content="Pure css based fullscreen slider Demo">
-<meta name="author" content="Ashok Prajapati">
-<meta property="og:url" content="http://www.htmllion.com/examples/pure-css-based-fullscreen-slider-demo.html">
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Pure css based fullscreen slider - HTMLlion Demo">
-<meta property="og:description"   content="Pure css based fullscreen slider, css based image slider  " />
-<meta property="og:site_name" content="HTML Lion">
-<meta property="og:image" content="http://www.htmllion.com/img/pure-css-based-fullscreen-slider.png" />
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="com/css/css.css" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 
 <style>
+
 body {
   overflow: hidden;
   width: 100%;
@@ -25,7 +19,8 @@ body {
   padding: 0;
   margin: 0;
 }
-/* Slider wrapper*/
+
+/* Слайдер обертка, задаем размеры , прячем то что выходит*/
 .css-slider-wrapper {
   display: block;
   background: #FFF;
@@ -36,32 +31,34 @@ body {
   top: 0;
   bottom: 0;
 }
-/* Slider */
-.slider {
-  width: 100%;
-  height: 100%;
-  background: red;
+/* блок слайда Универсальное првило для всех слайдов */
+.slider { 
+  /* растягиваем  относительно окна родителя */
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 1;
+  width: 100%;
+  height: 100%; 
   z-index: 0;
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  /* красный фон и непрозрачный */
+  background: red;
+  opacity: 1; 
+  /* для управления положением возможных элементов, делаем его
+  Флекс контейнером */
+  display: flex;  
   flex-direction: row;
-  flex-wrap: wrap;
-  -webkit-flex-align: center;
-  -webkit-align-items: center;
+  flex-wrap: wrap; 
   align-items: center;
   justify-content: center;
-  align-content: center;
-  -webkit-transition: -webkit-transform 1600ms;
-  transition: -webkit-transform 1600ms, transform 1600ms;
-  -webkit-transform: scale(1);
+  align-content: center;  
+  /* плавный переход */
   transform: scale(1);
+  transition: all 1600ms; 
 }
-/* each slide backgound color */  
+
+/* Фон и ИЗНАЧАЛЬНОЕ положение для кажлого отдельного слада, задаем с помощью 
+отдельного класса slide1,2,3 и т.д*/ 
+ /* слады растянуты в полоску и смещены влево на 100% своей ширины  */
 .slide1 {
   background: #00bcd7;
   left: 0;
@@ -78,18 +75,18 @@ body {
   background: #607d8d;
   left: 300%;
 }
+  /* для всех дивов внутри слайда выравниваем текст по центру  */
 .slider > div {
   text-align: center;
 }
-/* Slider inner slide effect */
+/* визуальные стили появления контента внутри слайда */
 .slider h2 {
   color: #FFF;
   font-weight: 900;
   text-transform: uppercase;
   font-size: 45px;
   line-height: 120%;
-  opacity: 0;
-  -webkit-transform: translateX(500px);
+  opacity: 0; 
   transform: translateX(500px);
 }
 .slider .button {
@@ -100,17 +97,16 @@ body {
   opacity: 0;
   font-size: 15px;
   line-height: 30px;
-  display: inline-block;
-  -webkit-transform: translateX(-500px);
+  display: inline-block; 
   transform: translateX(-500px);
 }
-.slider h2, .slider .button {
-  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
-  transition: transform 800ms, opacity 800ms;
-  -webkit-transition-delay: 1s; /* Safari */
+.slider h2, .slider .button { 
+  transition: transform 800ms, opacity 800ms; 
   transition-delay: 1s;
 }
-/* Next and Preive arrow */ 
+ /* СТРЕЛКИ  */
+ 
+/* Стрелки контролы */ 
 .control {
   position: absolute;
   top: 50%;
@@ -119,6 +115,7 @@ body {
   margin-top: -25px;
   z-index: 55;
 }
+  /* прячем элемент LABEL, в дальнейшем будет отображать дочерний элемнт со иконкой стрелкой   */
 .control label {
   z-index: 0;
   display: none;
@@ -132,13 +129,16 @@ body {
 .control label:hover {
   opacity: 0.5;
 }
+  /* положение стрелок  */
 .next {
   right: 1%;
 }
 .previous {
   left: 1%;
 }
-/* Slider Pagger */ 
+ /*  ПАГИНАЦИЯ */
+
+/* положении пагинции */ 
 .slider-pagination {
   position: absolute;
   bottom: 20px;
@@ -147,6 +147,7 @@ body {
   text-align: center;
   z-index: 1000;
 }
+  /* отображение кружочков */
 .slider-pagination label {
   width: 10px;
   height: 10px;
@@ -157,40 +158,50 @@ body {
   border: solid 1px rgba(255,255,255,0.4);
   cursor: pointer;
 }
+
 /* Slider Pagger arrow event */
+
+/* при чекнутом ПЕРВОМ инпуте ==> 1- находим блок NEXT 2 ==> отображаем стрелку ВПРАВО */
 .slide-radio1:checked ~ .next .numb2, 
+/* при чекнутом ВТОРОМ инпуте ==> 1- находим блок NEXT 2 ==> отображаем стрелку ВПРАВО */ 
 .slide-radio2:checked ~ .next .numb3, 
+/* при чекнутом ТРЕТЬЕМ инпуте ==> 1- находим блок NEXT 2 ==> отображаем стрелку ВПРАВО */
 .slide-radio3:checked ~ .next .numb4, 
+  /* -------------------------------*/
+/* при чекнутом ВТОРОМ инпуте ==> 1- находим блок PREVIOUS 2 ==> отображаем стрелку ВЛЕВО */
 .slide-radio2:checked ~ .previous .numb1, 
+/* при чекнутом ТРЕТЬЕМ инпуте ==> 1- находим блок PREVIOUS 2 ==> отображаем стрелку ВЛЕВО */
 .slide-radio3:checked ~ .previous .numb2, 
+/* при чекнутом ЧЕТВЕРТОМ инпуте ==> 1- находим блок PREVIOUS 2 ==> отображаем стрелку ВЛЕВО */
 .slide-radio4:checked ~ .previous .numb3 {
   display: block;
   z-index: 1
 }
-/* Slider Pagger event */
+/* отображаем активный слайд цветом кружочка */
 .slide-radio1:checked ~ .slider-pagination .page1, 
 .slide-radio2:checked ~ .slider-pagination .page2, 
 .slide-radio3:checked ~ .slider-pagination .page3, 
 .slide-radio4:checked ~ .slider-pagination .page4 {
   background: rgba(255,255,255,1)
 }
-/* Slider slide effect */
-.slide-radio1:checked ~ .slider {
-  -webkit-transform: translateX(0%);
+/* двигаем слайды */
+.slide-radio1:checked ~ .slider { 
   transform: translateX(0%);
 }
-.slide-radio2:checked ~ .slider {
-  -webkit-transform: translateX(-100%);
+
+.slide-radio2:checked ~ .slider { 
   transform: translateX(-100%);
 }
-.slide-radio3:checked ~ .slider {
-  -webkit-transform: translateX(-200%);
+
+.slide-radio3:checked ~ .slider { 
   transform: translateX(-200%);
 }
-.slide-radio4:checked ~ .slider {
-  -webkit-transform: translateX(-300%);
+
+.slide-radio4:checked ~ .slider { 
   transform: translateX(-300%);
 }
+
+ /* показываем элеиенты слада */
 .slide-radio1:checked ~ .slide1 h2,  
 .slide-radio2:checked ~ .slide2 h2,  
 .slide-radio3:checked ~ .slide3 h2,  
@@ -198,12 +209,12 @@ body {
 .slide-radio1:checked ~ .slide1 .button,  
 .slide-radio2:checked ~ .slide2 .button,  
 .slide-radio3:checked ~ .slide3 .button,  
-.slide-radio4:checked ~ .slide4 .button {
-  -webkit-transform: translateX(0);
+.slide-radio4:checked ~ .slide4 .button { 
   transform: translateX(0);
-  opacity: 1
+  opacity: 1;
 }
 
+ /* медиаправило для маленьких девайсов */
 @media only screen and (max-width: 767px) {
 .slider h2 {
   font-size: 20px;
@@ -225,12 +236,13 @@ body {
 
 <div class="css-slider-wrapper">
 
+  <!-- контролы, прячем от отображения -->
   <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
   <input type="radio" name="slider" class="slide-radio2" id="slider_2">
   <input type="radio" name="slider" class="slide-radio3" id="slider_3">
   <input type="radio" name="slider" class="slide-radio4" id="slider_4">
 
-  <!-- блок с точками внизу  -->
+  <!-- блок пагинация с кружочками внизу  -->
   <div class="slider-pagination">
     <label for="slider_1" class="page1"></label>
     <label for="slider_2" class="page2"></label>
@@ -238,6 +250,9 @@ body {
     <label for="slider_4" class="page4"></label>
   </div>
 
+  <!--используем для отображения контролов FAwesome подключенным через CDN  -->
+  <!-- привязываем контролы к пагинции с помощью указания обоим одинковые значения в атрибуте for -->
+  <!-- таким образом при активном слайде будут активными и контрол и точка пагинации -->
   <div class="next control">
     <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
     <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
@@ -252,6 +267,7 @@ body {
     <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
   </div>
 
+  <!-- сами слады -->
   <div class="slider slide1">
     <!-- <div>
       <h2>Css Based slider</h2>
@@ -270,7 +286,7 @@ body {
       <!-- <a href="http://www.htmllion.com/pure-css-based-fullscreen-slider.html" class="button">Back</a> <a href="#" class="button">Download</a> </div> -->
   </div>
 
-  <div class="slider slide4">
+  <div class="slider slide4"> 
     <!-- <div> -->
       <!-- <h2>css3 slider</h2> -->
       <!-- <a href="http://www.htmllion.com/pure-css-based-fullscreen-slider.html" class="button">Back</a> <a href="#" class="button">Download</a> </div> -->
