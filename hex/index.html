@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #grid {
+        position: relative;
+        width: 60%;
+        margin: 0 auto;
+        padding: 0; /* Clears unordered list default */
+        list-style-type: none;
+      }
+
+      .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #grid li {
+        position: relative;
+        float: left;
+        width: 27.85714285714286%;
+        padding: 0 0 32.16760145166612% 0;
+        transform: rotate(-60deg) skewY(30deg);
+        background: #fd005f;
+        overflow: hidden;
+        visibility: hidden;
+      }
+      #grid li .hexagon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(./face-01.jpg) no-repeat center;
+        background-size: cover;
+        transform: skewY(-30deg) rotate(60deg);
+        overflow: hidden;
+      }
+      /* Селектор дикой карты * — выбирает все дочерние элементы, содержащиеся в <li> 
+и применяет visible влыдельца с указанного значения ко всем элементам: visible. 
+Используя подстановочный селектор нам не надо повторно объявлять видимость 
+для каждого дочернего элемента. Не создавать внутри каждого <li> дополнительного объявления 
+для получения шестиугольника.*/
+      #grid li * {
+        visibility: visible;
+      }
+    </style>
+
+    <ul id="grid" class="clear">
+      <li><div class="hexagon"></div></li>
+    </ul>
+  </body>
+</html>
