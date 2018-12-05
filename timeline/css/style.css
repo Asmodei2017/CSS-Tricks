@@ -1,0 +1,68 @@
+@font-face{
+    font-family: "Maryad Bold";
+    src: url(../font/MyriadPro-Bold.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Maryad Bold"; 
+}
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.timeline{
+    width: 62%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+.timeline-item{
+    position: relative; 
+    width: 100%;
+    margin: 0 auto 100px;
+}
+.timeline-item-img__wrap{
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:0 0 0 7px #ccc;
+}
+.timeline-item:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    bottom: -107%;
+    left: 50%;
+    width: 4px;
+    height: 200px;
+    background-color: #ccc;
+}
+.last{
+    background-color: #fed136;
+}
+.left{
+    text-align-last: left;
+    right: -5%;
+}
+.right{
+    text-align: right;
+    left: -5%;
+}
+.timeline-item__text{
+    position: absolute;
+    top: 0;  
+    width: 37%;
+}
+/* font */
+.timeline-date{
+    font-size: 18px;
+}
+.timeline-content{
+    font-size: 14px;
+    color: #777;
+}
