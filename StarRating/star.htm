@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+
+
+    <html itemscope itemtype="http://schema.org/QAPage" class="html__responsive">
+
+    <head>
+
+        <title>javascript - Turn a number into star rating display using jQuery and CSS - Stack Overflow</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+
+
+        <meta property="og:type" content= "website" />
+        <meta property="og:url" content="https://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css"/>
+        <meta property="og:site_name" content="Stack Overflow" />
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="stackoverflow.com"/>
+        <meta name="twitter:title" property="og:title" itemprop="name" content="Turn a number into star rating display using jQuery and CSS" />
+        <meta name="twitter:description" property="og:description" itemprop="description" content="I have been looking at jquery plugin and was wondering how to adapt that plugin to turn a number (like 4.8618164) into a 4.8618164 stars filled out of 5. Basically interpreting a number &amp;lt;5 into ..." />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.sstatic.net/Js/stub.en.js?v=b7f33979a860"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Shared/stacks.css?v=4661c036bf63" >
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=ee4f06d31448" >
+
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Turn a number into star rating display using jQuery and CSS&#39;" href="/feeds/question/1987524">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:1987524});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '1987524');
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+
+
+        <script>
+        StackExchange.init({"locale":"en","serverTime":1552549298,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"011e27529043c97200b5ea22844f1b19caf888cc940fe1ef1659a08d49e64e5d","tid":"d7fc1bbb-53a6-67b9-c5c3-6bf1dd22a959","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"inline_signup_hero":{"v":"d","g":1}}},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"6e41a6bc8765"}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"userMessaging":{},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"6dae29f006b8","js/moderator.en.js":"9494404a2233","js/pseudomoderator.en.js":"81279009c185","js/full-anon.en.js":"99ba2cb3e891","js/full.en.js":"108aaf32207a","js/wmd.en.js":"38fb904b1088","js/mobile.en.js":"3c875c8be40f","js/help.en.js":"dfa53045eb37","js/tageditor.en.js":"7bcc5d4b110f","js/tageditornew.en.js":"92c950a52489","js/inline-tag-editing.en.js":"bd4171ec162a","js/revisions.en.js":"d059a98114ef","js/review.en.js":"5c4622b3fb1e","js/tagsuggestions.en.js":"ddb0e41afe26","js/post-validation.en.js":"e0142911a3c2","js/explore-qlist.en.js":"5c7424c271ef","js/events.en.js":"401e2000bf98","js/keyboard-shortcuts.en.js":"e2a1e27e318b","js/external-editor.en.js":"abab0cc88942","js/adops.en.js":"22a9bd59b1e9","js/begin-edit-event.en.js":"569167fb8b41","js/stacks-polyfills.en.js":"c32a3ca03ad6","js/external-editor.en.js":"abab0cc88942","js/snippet-javascript.en.js":"5197b50db487","js/snippet-javascript-codemirror.en.js":"5929fe793394"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    </head>
+        <body class="question-page unified-theme">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar top-bar__network _fixed">
+    <div class="-container">
+        <div class="-main">
+                <a href="#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle"><span class="ps-relative"></span></a>
+                                <a href="https://stackoverflow.com" class="-logo js-gps-track"
+                        data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img _glyph">Stack Overflow</span>
+                    </a>
+
+
+
+        </div>
+
+            <form id="search" action=/search method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" class="s-input js-search-field " />
+                        <button type="submit" aria-label="Search…" class="s-btn s-btn__primary s-btn__icon btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links drop-icons-responsively">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg></a></li>
+            <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"/></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"/></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item" data-remove-order="1"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+
+    <li class="-item site-switcher-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 175 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f1987524%2fturn-a-number-into-star-rating-display-using-jquery-and-css" class="login-link s-btn btn-topbar-clear py8" rel="nofollow">Log In</a>
+                        <a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent" class="login-link s-btn s-btn__primary py8 btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign Up</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://stackoverflow.com"
+       class="current-site-link site-link js-gps-track grid gs8 gsx"
+       data-id="1"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackoverflow.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com"
+       class="site-link js-gps-track grid gs8 gsx"
+       data-id="552"
+       data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-stackoverflowmeta site-icon grid--cell" title="Meta Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Meta Stack Overflow
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f1987524%2fturn-a-number-into-star-rating-display-using-jquery-and-css" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                    <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+                <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm"></div>
+            </div>
+    </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 ff-sans fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx8 mx-auto grid jc-center" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell mr12" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+                </p>
+            </div>
+            <a class="grid--cell fc-white js-notice-close" aria-label="notice-dismiss">
+                <svg aria-hidden="true" class="svg-icon m0 iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: true }); });
+        StackExchange.scrollPadding.setPaddingTop(50, 10);     </script>
+
+
+
+
+
+
+    <div class="container">
+
+
+
+
+
+<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar">
+    <div class="left-sidebar--sticky-container js-sticky-leftnav">
+            <nav role="navigation">
+                <ol class="nav-links">
+                    <li>    <li>
+        <a
+            href="/"
+            class="pl8 js-gps-track nav-links--link"
+            
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Home        </a>
+    </li>
+</li>
+                    <li>
+                        <ol class="nav-links">
+                                <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Public</li>
+                                <li class=" youarehere">
+        <a id="nav-questions"
+            href="/questions"
+            class="pl8 js-gps-track nav-links--link -link__with-icon"
+            
+            data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+<svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zM8 15.32a6.4 6.4 0 0 1-5.23-7.75L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.4 6.4 0 0 1 2.32 10.24z"/></svg>                <span class="-link--channel-name">Stack Overflow</span>
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-tags"
+            href="/tags"
+            class=" js-gps-track nav-links--link"
+            
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Tags        </a>
+    </li>
+    <li>
+        <a id="nav-users"
+            href="/users"
+            class=" js-gps-track nav-links--link"
+            
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Users        </a>
+    </li>
+    <li>
+        <a id="nav-jobs"
+            href="/jobs?med=site-ui&amp;ref=jobs-tab"
+            class=" js-gps-track nav-links--link"
+            
+            data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">
+Jobs        </a>
+    </li>
+                                                    </ol>
+                    </li>
+                        <li>
+                            <ol class="nav-links">
+                                        <li class="fs-fine tt-uppercase ml8 mt24 mb4 fc-light">
+                                            Teams
+                                        </li>
+                                        <li class="ps-relative">
+                                            <a href="https://stackoverflow.com/teams"
+                                               class="pl8 js-gps-track nav-links--link -link__with-icon"
+                                               title="A private, secure home for your team&#39;s questions and answers. Starts at $10/month"
+                                               data-gps-track="teams.create.left-sidenav.click"
+                                               data-ga="[&quot;teams traffic&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]">
+                                                <svg aria-hidden="true" class="svg-icon iconPlus" width="18" height="18" viewBox="0 0 18 18"><path d="M10 2H8v6H2v2h6v6h2v-6h6V8h-6z"></path></svg>
+                                                <span class="js-create-team-btn-with-tooltip -link--channel-name">Create Team</span>
+                                            </a>
+
+
+
+<div class="d-none create-team-tooltip js-create-team-tooltip bar-sm bg-blue-500 fc-white l100 md:d-none mln24 new-feature-wrapper p16 pr32 t0 ws2"
+     data-cookie="notice-ctt"
+     data-expire-date="1868168498554">
+    <svg aria-hidden="true" class="svg-icon ps-absolute r12 c-pointer iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"/></svg>
+    <p class="mb0">Q&amp;A for work. A dedicated place to share your team’s knowledge.</p>
+</div>
+<script>
+    StackExchange.ready(function () {
+        StackExchange.Notice.tooltipInit();
+    });
+</script>
+                                        </li>
+                            </ol>
+                        </li>
+                </ol>
+            </nav>
+    </div>
+</div>
+   
+
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+    <div class="inner-content clearfix">
+    
+    
+
+<style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty,.everyoneloves__bot-mid-leaderboard:empty{                height:90px;width:728px;box-sizing:border-box;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard"></div>            <div id="question-header" class="grid">
+                    <h1 itemprop="name" class="grid--cell fs-headline1 fl1 ow-break-word"><a href="/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css" class="question-hyperlink">Turn a number into star rating display using jQuery and CSS</a></h1>
+
+            
+<div class="pl8 aside-cta grid--cell" role="navigation" aria-label="ask new question">
+        <a href="/questions/ask" class="d-inline-flex ai-center ws-nowrap s-btn s-btn__primary" >
+            Ask Question
+        </a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="1987524"  id="question">
+
+    
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="1987524">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This question shows research effort; it is useful and clear" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="98">98</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This question does not show any research effort; it is unclear or not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+        <button class="js-favorite-btn s-btn s-btn__unset c-pointer py8" aria-pressed="false" aria-label="favorite (99)" data-selected-classes="fc-yellow-600">
+            <svg aria-hidden="true" class="svg-icon iconStar" width="18" height="18" viewBox="0 0 18 18"><path d="M9 12.65l-5.29 3.63 1.82-6.15L.44 6.22l6.42-.17L9 0l2.14 6.05 6.42.17-5.1 3.9 1.83 6.16z"/></svg>
+            <div class="js-favorite-count mt8" data-value="99">99</div>
+        </button>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+
+<p>I have been looking at jquery plugin and was wondering how to adapt that plugin to turn a number (like 4.8618164) into a 4.8618164 stars filled out of 5. Basically interpreting a number &lt;5 into stars filled in a 5-star rating system using jQuery/JS/CSS. </p>
+
+<p>Note that this would only display/show the stars rating from an already available number and not accept new ratings submissions. </p>
+    </div>
+
+        <div class="post-taglist grid gs4 gsy fd-column">
+            <div class="grid ps-relative d-block">
+                <a href="/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="/questions/tagged/jquery" class="post-tag" title="show questions tagged &#39;jquery&#39;" rel="tag">jquery</a> <a href="/questions/tagged/css" class="post-tag" title="show questions tagged &#39;css&#39;" rel="tag">css</a> <a href="/questions/tagged/rating" class="post-tag" title="show questions tagged &#39;rating&#39;" rel="tag">rating</a> 
+            </div>
+        </div>
+
+    <div class="mb0 ">
+        <div class="mt16 pt4 grid gs8 gsy fw-wrap jc-end ai-start">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/q/1987524" title="short permalink to this question" class="short-link" itemprop="url" id="link-post-1987524">share</a><span class="lsep">|</span><a href="/posts/1987524/edit" class="suggest-edit-post" title="">improve this question</a></div>
+            </div>
+
+                <div class="post-signature grid--cell">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/1987524/revisions" title="show all edits to this post">edited <span title="2012-12-10 17:19:56Z" class="relativetime">Dec 10 '12 at 17:19</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/422353/madth3"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/3b1a3c7eb11abd99439c5b1b4b50b37f?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/422353/madth3">madth3</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">6,368</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="39 silver badges"><span class="badge2"></span><span class="badgecount">39</span></span><span title="62 bronze badges"><span class="badge3"></span><span class="badgecount">62</span></span>
+        </div>
+    </div>
+</div>                </div>
+            <div class="post-signature owner grid--cell">
+<div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2009-12-31 23:56:25Z" class="relativetime">Dec 31 '09 at 23:56</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/241673/steve"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/54a6e8e19bdd3f6e1de38223d0703d49?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/241673/steve">Steve</a><span class="d-none" itemprop="name">Steve</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,987</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="51 bronze badges"><span class="badge3"></span><span class="badgecount">51</span></span>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+                
+    <div class="post-layout--right">
+	    <div id="comments-1987524" class="comments js-comments-container " data-post-id="1987524">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+
+    <li id="comment-81334033" class="comment js-comment " data-comment-id="81334033">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">this is a <a href="https://github.com/wbotelhos/raty" rel="nofollow noreferrer">wonderful and easy to use plugin</a></span>
+                
+                    &ndash;&nbsp;<a href="/users/7735285/wpcoder"
+                       title="523 reputation"
+                       class="comment-user">wpcoder</a>
+                <span class="comment-date" dir="ltr"><span title="2017-11-09 01:17:15Z" class="relativetime-clean">Nov 9 '17 at 1:17</span></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-1987524" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+<div id="dfp-isb" class="everyonelovesstackoverflow everyoneloves__inline-sidebar"></div>
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="8">
+                                8 Answers
+                            <span style="display:none;" itemprop="answerCount">8</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere is-selected " href="/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="1987545"></a>
+<div id="answer-1987545" class="answer accepted-answer" data-answerid="1987545"  itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="1987545">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="253">253</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>Here's a solution for you, using only one very tiny and simple image and one automatically generated span element:</p>
+
+<h3>CSS</h3>
+
+<pre><code>span.stars, span.stars span {
+    display: block;
+    background: url(stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}
+</code></pre>
+
+<h3>Image</h3>
+
+<blockquote>
+  <p><a href="http://www.ulmanen.fi/stuff/stars.png" rel="noreferrer">alt text http://www.ulmanen.fi/stuff/stars.png</a></p>
+</blockquote>
+
+<p><strong>Note:</strong> do <em>NOT</em> hotlink to the above image! Copy the file to your own server and use it from there.</p>
+
+<h3>jQuery</h3>
+
+<pre><code>$.fn.stars = function() {
+    return $(this).each(function() {
+        // Get the value
+        var val = parseFloat($(this).html());
+        // Make sure that the value is in 0 - 5 range, multiply to get width
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        // Create stars holder
+        var $span = $('&lt;span /&gt;').width(size);
+        // Replace the numerical value with stars
+        $(this).html($span);
+    });
+}
+</code></pre>
+
+<p>If you want to restrict the stars to only half or quarter star sizes, add one of these rows before the <code>var size</code> row:</p>
+
+<pre><code>val = Math.round(val * 4) / 4; /* To round to nearest quarter */
+val = Math.round(val * 2) / 2; /* To round to nearest half */
+</code></pre>
+
+<h3>HTML</h3>
+
+<pre><code>&lt;span class="stars"&gt;4.8618164&lt;/span&gt;
+&lt;span class="stars"&gt;2.6545344&lt;/span&gt;
+&lt;span class="stars"&gt;0.5355&lt;/span&gt;
+&lt;span class="stars"&gt;8&lt;/span&gt;
+</code></pre>
+
+<h3>Usage</h3>
+
+<pre><code>$(function() {
+    $('span.stars').stars();
+});
+</code></pre>
+
+<h3>Output</h3>
+
+<blockquote>
+  <p><a href="http://www.ulmanen.fi/stuff/stars_output.png" rel="noreferrer">Image from fugue icon set (www.pinvoke.com) http://www.ulmanen.fi/stuff/stars_output.png</a></p>
+</blockquote>
+
+<h3>Demo</h3>
+
+<blockquote>
+  <p><a href="http://www.ulmanen.fi/stuff/stars.php" rel="noreferrer">http://www.ulmanen.fi/stuff/stars.php</a></p>
+</blockquote>
+
+<p>This will probably suit your needs. With this method you don't have to calculate any three quarter or whatnot star widths, just give it a float and it'll give you your stars.</p>
+
+<hr>
+
+<p>A small explanation on how the stars are presented might be in order.</p>
+
+<p>The script creates two block level span elements. Both of the spans initally get a size of 80px * 16px and a background image stars.png. The spans are nested, so that the structure of the spans looks like this:</p>
+
+<pre><code>&lt;span class="stars"&gt;
+    &lt;span&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+
+<p>The outer span gets a <code>background-position</code> of <code>0 -16px</code>. That makes the gray stars in the outer span visible. As the outer span has height of 16px and <code>repeat-x</code>, it will only show 5 gray stars.</p>
+
+<p>The inner span on the other hand has a <code>background-position</code> of <code>0 0</code> which makes only the yellow stars visible.</p>
+
+<p>This would of course work with two separate imagefiles, star_yellow.png and star_gray.png. But as the stars have a fixed height, we can easily combine them into one image. This utilizes the <a href="http://css-tricks.com/css-sprites/" rel="noreferrer">CSS sprite technique</a>.</p>
+
+<p>Now, as the spans are nested, they are automatically overlayed over each other. In the default case, when the width of both spans is 80px, the yellow stars completely obscure the grey stars.</p>
+
+<p>But when we adjust the width of the inner span, the width of the yellow stars decreases, revealing the gray stars.</p>
+
+<p>Accessibility-wise, it would have been wiser to leave the float number inside the inner span and hide it with <code>text-indent: -9999px</code>, so that people with CSS turned off would at least see the floating point number instead of the stars.</p>
+
+<p>Hopefully that made some sense.</p>
+
+<hr>
+
+<h3>Updated 2010/10/22</h3>
+
+<p>Now even more compact and harder to understand! Can also be squeezed down to a one liner:</p>
+
+<pre><code>$.fn.stars = function() {
+    return $(this).each(function() {
+        $(this).html($('&lt;span /&gt;').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+    });
+}
+</code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2010-01-01T00:09:33"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/1987545" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-1987545">share</a><span class="lsep">|</span><a href="/posts/1987545/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/1987545/revisions" title="show all edits to this post">edited <span title="2013-03-06 14:06:02Z" class="relativetime">Mar 6 '13 at 14:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-01-01 00:09:33Z" class="relativetime">Jan 1 '10 at 0:09</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/198707/tatu-ulmanen"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/bd4b98fa3891e761de0c60a042832657?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/198707/tatu-ulmanen">Tatu Ulmanen</a><span class="d-none" itemprop="name">Tatu Ulmanen</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 98,106" dir="ltr">98.1k</span><span title="26 gold badges"><span class="badge1"></span><span class="badgecount">26</span></span><span title="165 silver badges"><span class="badge2"></span><span class="badgecount">165</span></span><span title="177 bronze badges"><span class="badge3"></span><span class="badgecount">177</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-1987545" class="comments js-comments-container " data-post-id="1987545">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="11"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+
+    <li id="comment-1904772" class="comment js-comment " data-comment-id="1904772">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@Tatu, any chance of fleshing it out a bit more with <i>how</i> this works. My knowledge of jQuery is just a tad short to totally get it. I think I understand how the CSS works with repeating in the x direction and the 16*5=80 bit and how you adjust the width of the yellow-star image, but how are you overlaying the two images on top of each other from a single image that has one star above the other? Does the -16px bring the gray star up to the same level as the yellow?</span>
+                
+                    &ndash;&nbsp;<a href="/users/14860/paxdiablo"
+                       title="639,710 reputation"
+                       class="comment-user">paxdiablo</a>
+                <span class="comment-date" dir="ltr"><span title="2010-01-01 03:42:08Z" class="relativetime-clean">Jan 1 '10 at 3:42</span></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-1905627" class="comment js-comment " data-comment-id="1905627">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Thanks for the update, @Tatu, that makes a lot more sense to me now. Unfortunately I&#39;d already given you a +1 so I can&#39;t do it again but hopefully the explanation will earn you some more (well-earned) rep. Cheers.</span>
+                
+                    &ndash;&nbsp;<a href="/users/14860/paxdiablo"
+                       title="639,710 reputation"
+                       class="comment-user">paxdiablo</a>
+                <span class="comment-date" dir="ltr"><span title="2010-01-01 13:43:29Z" class="relativetime-clean">Jan 1 '10 at 13:43</span></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-1905771" class="comment js-comment " data-comment-id="1905771">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received"
+                            class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@paxdiablo and others, thanks for the support. Perhaps I should make this a proper jQuery plugin as this technique seems to come as a surprise to most :)</span>
+                
+                    &ndash;&nbsp;<a href="/users/198707/tatu-ulmanen"
+                       title="98,106 reputation"
+                       class="comment-user">Tatu Ulmanen</a>
+                <span class="comment-date" dir="ltr"><span title="2010-01-01 14:41:46Z" class="relativetime-clean">Jan 1 '10 at 14:41</span></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-2637461" class="comment js-comment " data-comment-id="2637461">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@Tatu, thanks immensely.  The existing five star plugins all seem to want a form which is fine for inputing a rating, but way overkill to change the representation of a number.</span>
+                
+                    &ndash;&nbsp;<a href="/users/24279/vfilby"
+                       title="7,655 reputation"
+                       class="comment-user">vfilby</a>
+                <span class="comment-date" dir="ltr"><span title="2010-04-12 19:22:40Z" class="relativetime-clean">Apr 12 '10 at 19:22</span></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-30747759" class="comment js-comment " data-comment-id="30747759">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received"
+                            class="warm">7</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy"><b>Or even smaller:</b> <a href="http://jsbin.com/IBIDalEn/2/edit" rel="nofollow noreferrer">jsbin.com/IBIDalEn/2/edit</a> (P.S. removed unneeded stuff in JS, minified CSS selectors and used <code>max-width</code>).</span>
+                
+                    &ndash;&nbsp;<a href="/users/383904/roko-c-buljan"
+                       title="128,010 reputation"
+                       class="comment-user">Roko C. Buljan</a>
+                <span class="comment-date" dir="ltr"><span title="2013-12-13 04:06:12Z" class="relativetime-clean">Dec 13 '13 at 4:06</span></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-1987545" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link  dno"
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   ></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href=# onclick="">show <b>11</b> more comments</a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard"></div>
+  
+<a name="34950378"></a>
+<div id="answer-34950378" class="answer" data-answerid="34950378"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="34950378">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="25">25</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>If you only have to support modern browsers, you can get away with:</p>
+
+<ul>
+<li><em>No</em> images;</li>
+<li><em>Mostly</em> static css;</li>
+<li><em>Nearly</em> no jQuery or Javascript;</li>
+</ul>
+
+<p>You only need to convert the number to a <code>class</code>, e.g. <code>class='stars-score-50'</code>.</p>
+
+<p>First a demo of "rendered" markup:</p>
+
+<p><div class="snippet" data-lang="js" data-hide="false">
+<div class="snippet-code">
+<pre class="snippet-code-css lang-css prettyprint-override"><code>body { font-size: 18px; }
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: gold;
+  overflow: hidden;
+}
+
+.stars-0:after { width: 0%; }
+.stars-10:after { width: 10%; }
+.stars-20:after { width: 20%; }
+.stars-30:after { width: 30%; }
+.stars-40:after { width: 40%; }
+.stars-50:after { width: 50%; }
+.stars-60:after { width: 60%; }
+.stars-70:after { width: 70%; }
+.stars-80:after { width: 80%; }
+.stars-90:after { width: 90%; }
+.stars-100:after { width: 100; }</code></pre>
+<pre class="snippet-code-html lang-html prettyprint-override"><code>Within block level elements:
+
+&lt;div&gt;&lt;span class="stars-container stars-0"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-10"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-20"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-30"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-40"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-50"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-60"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-70"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-80"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-90"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span class="stars-container stars-100"&gt;★★★★★&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;Or use it in a sentence: &lt;span class="stars-container stars-70"&gt;★★★★★&lt;/span&gt; (cool, huh?).&lt;/p&gt;</code></pre>
+</div>
+</div>
+</p>
+
+<p>Then a demo that uses a wee bit of code:</p>
+
+<p><div class="snippet" data-lang="js" data-hide="false">
+<div class="snippet-code">
+<pre class="snippet-code-js lang-js prettyprint-override"><code>$(function() {
+  function addScore(score, $domElement) {
+    $("&lt;span class='stars-container'&gt;")
+      .addClass("stars-" + score.toString())
+      .text("★★★★★")
+      .appendTo($domElement);
+  }
+
+  addScore(70, $("#fixture"));
+});</code></pre>
+<pre class="snippet-code-css lang-css prettyprint-override"><code>body { font-size: 18px; }
+
+.stars-container {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+}
+
+.stars-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: lightgray;
+}
+
+.stars-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  color: gold;
+  overflow: hidden;
+}
+
+.stars-0:after { width: 0%; }
+.stars-10:after { width: 10%; }
+.stars-20:after { width: 20%; }
+.stars-30:after { width: 30%; }
+.stars-40:after { width: 40%; }
+.stars-50:after { width: 50%; }
+.stars-60:after { width: 60%; }
+.stars-70:after { width: 70%; }
+.stars-80:after { width: 80%; }
+.stars-90:after { width: 90%; }
+.stars-100:after { width: 100; }</code></pre>
+<pre class="snippet-code-html lang-html prettyprint-override"><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;
+
+Generated: &lt;div id="fixture"&gt;&lt;/div&gt;</code></pre>
+</div>
+</div>
+</p>
+
+<p>The biggest downsides of this solution are:</p>
+
+<ol>
+<li>You need the stars inside the element to generate correct width;</li>
+<li>There's no semantic markup, e.g. you'd prefer the <em>score</em> as text inside the element;</li>
+<li>It only allows for as many scores as you'll have classes (because we <em>can't</em> use Javascript to set a precise <code>width</code> on a pseudo-element).</li>
+</ol>
+
+<p>To fix this the solution above can be easily tweaked. The <code>:before</code> and <code>:after</code> bits need to become actual elements in the DOM (so we need some JS for that).</p>
+
+<p>The latter is left as an excercise for the reader.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2016-01-22T15:36:31"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/34950378" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-34950378">share</a><span class="lsep">|</span><a href="/posts/34950378/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2016-01-22 15:36:31Z" class="relativetime">Jan 22 '16 at 15:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/419956/jeroen"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/ab00b6c461dcf852df10c077a0a2b4eb?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/419956/jeroen">Jeroen</a><span class="d-none" itemprop="name">Jeroen</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 36,443" dir="ltr">36.4k</span><span title="24 gold badges"><span class="badge1"></span><span class="badgecount">24</span></span><span title="127 silver badges"><span class="badge2"></span><span class="badgecount">127</span></span><span title="208 bronze badges"><span class="badge3"></span><span class="badgecount">208</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-34950378" class="comments js-comments-container " data-post-id="34950378">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+
+    <li id="comment-63638121" class="comment js-comment " data-comment-id="63638121">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received"
+                            class="cool">3</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">I extended this solution to accommodate for floats and dynamically generated scores that don&#39;t fit into 10ths of a 100. <a href="http://codepen.io/cameck/pen/PzpVgz" rel="nofollow noreferrer">Codepen</a> . Thanks for getting me started :D</span>
+                
+                    &ndash;&nbsp;<a href="/users/4875295/cameck"
+                       title="761 reputation"
+                       class="comment-user">cameck</a>
+                <span class="comment-date" dir="ltr"><span title="2016-06-29 14:10:34Z" class="relativetime-clean">Jun 29 '16 at 14:10</span></span>
+                        <span title="this comment was edited 2 times">
+                            <svg aria-hidden="true" class="svg-icon va-text-bottom o50 iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="M8.37 3.7L2 10.11V12h1.88l6.37-6.43zM12.23 2.83L11.1 1.71a.5.5 0 0 0-.7 0L9.2 2.86l1.88 1.84 1.14-1.16a.5.5 0 0 0 0-.71z"/></svg>
+                        </span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-89281651" class="comment js-comment " data-comment-id="89281651">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">This is a pretty sweet script</span>
+                
+                    &ndash;&nbsp;<a href="/users/1787314/nick-div"
+                       title="1,708 reputation"
+                       class="comment-user">Nick Div</a>
+                <span class="comment-date" dir="ltr"><span title="2018-07-03 07:32:53Z" class="relativetime-clean">Jul 3 '18 at 7:32</span></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-34950378" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="39220717"></a>
+<div id="answer-39220717" class="answer" data-answerid="39220717"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="39220717">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="18">18</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p><strong>Try this jquery function</strong></p>
+
+<pre><code>&lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"&gt;
+
+&lt;span class="stars" data-rating="4" data-num-stars="5" &gt;&lt;/span&gt;
+
+&lt;script&gt;
+    $.fn.stars = function() {
+        return $(this).each(function() {
+
+            var rating = $(this).data("rating");
+
+            var numStars = $(this).data("numStars");
+
+            var fullStar = new Array(Math.floor(rating + 1)).join('&lt;i class="fa fa-star"&gt;&lt;/i&gt;');
+
+            var halfStar = ((rating%1) !== 0) ? '&lt;i class="fa fa-star-half-empty"&gt;&lt;/i&gt;': '';
+
+            var noStar = new Array(Math.floor(numStars + 1 - rating)).join('&lt;i class="fa fa-star-o"&gt;&lt;/i&gt;');
+
+            $(this).html(fullStar + halfStar + noStar);
+
+        });
+    }
+
+    $('.stars').stars();
+</code></pre>
+
+<p><a href="https://i.stack.imgur.com/1MdLS.png" rel="noreferrer"><img src="https://i.stack.imgur.com/1MdLS.png" alt="Screenshot"></a></p>
+
+<p>FontAwesome CSS</p>
+
+<p>You can download FontAwesome at <a href="http://fontawesome.io/" rel="noreferrer">http://fontawesome.io/</a></p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2016-08-30T06:55:54"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/39220717" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-39220717">share</a><span class="lsep">|</span><a href="/posts/39220717/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-08-30 06:55:54Z" class="relativetime">Aug 30 '16 at 6:55</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/5119214/rajasekar-d"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/48d8fc7570b3969ad5032b83a7a4dff4?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/5119214/rajasekar-d">Rajasekar D</a><span class="d-none" itemprop="name">Rajasekar D</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">264</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-39220717" class="comments js-comments-container " data-post-id="39220717">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+
+    <li id="comment-79136565" class="comment js-comment " data-comment-id="79136565">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Just a note that the closing &lt;/script&gt; tag is missing :)</span>
+                
+                    &ndash;&nbsp;<a href="/users/2026368/rob-stocki"
+                       title="92 reputation"
+                       class="comment-user">Rob Stocki</a>
+                <span class="comment-date" dir="ltr"><span title="2017-09-07 03:25:03Z" class="relativetime-clean">Sep 7 '17 at 3:25</span></span>
+                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-39220717" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="1987540"></a>
+<div id="answer-1987540" class="answer" data-answerid="1987540"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="1987540">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="7">7</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>Why not just have five separate images of a star (empty, quarter-full, half-full, three-quarter-full and full) then just inject the images into your DOM depending on the truncated or rouded value of rating multiplied by 4 (to get a whole numner for the quarters)?</p>
+
+<p>For example, 4.8618164 multiplied by 4 and rounded is 19 which would be four and three quarter stars.</p>
+
+<p>Alternatively (if you're lazy like me), just have one image selected from 21 (0 stars through 5 stars in one-quarter increments) and select the single image based on the aforementioned value. Then it's just one calculation followed by an image change in the DOM (rather than trying to change five different images).</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2010-01-01T00:06:39"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/1987540" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-1987540">share</a><span class="lsep">|</span><a href="/posts/1987540/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/1987540/revisions" title="show all edits to this post">edited <span title="2010-01-01 00:41:32Z" class="relativetime">Jan 1 '10 at 0:41</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-01-01 00:06:39Z" class="relativetime">Jan 1 '10 at 0:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/14860/paxdiablo"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/vXG1F.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/14860/paxdiablo">paxdiablo</a><span class="d-none" itemprop="name">paxdiablo</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 639,710" dir="ltr">640k</span><span title="172 gold badges"><span class="badge1"></span><span class="badgecount">172</span></span><span title="1259 silver badges"><span class="badge2"></span><span class="badgecount">1259</span></span><span title="1678 bronze badges"><span class="badge3"></span><span class="badgecount">1678</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-1987540" class="comments js-comments-container  dno" data-post-id="1987540">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-1987540" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="29324953"></a>
+<div id="answer-29324953" class="answer" data-answerid="29324953"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="29324953">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="5">5</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>I ended up going totally JS-free to avoid client-side render lag.  To accomplish that, I generate HTML like this:</p>
+
+<pre><code>&lt;span class="stars" title="{value as decimal}"&gt;
+    &lt;span style="width={value/5*100}%;"/&gt;
+&lt;/span&gt;
+</code></pre>
+
+<p>To help with accessibility, I even add the raw rating value in the title attribute.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2015-03-29T02:22:02"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/29324953" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-29324953">share</a><span class="lsep">|</span><a href="/posts/29324953/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-03-29 02:22:02Z" class="relativetime">Mar 29 '15 at 2:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/909921/tim-schmidt"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/957189c82306764bfe191fa7d58213a3?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/909921/tim-schmidt">Tim Schmidt</a><span class="d-none" itemprop="name">Tim Schmidt</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,070</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="20 bronze badges"><span class="badge3"></span><span class="badgecount">20</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-29324953" class="comments js-comments-container  dno" data-post-id="29324953">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-29324953" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="29309286"></a>
+<div id="answer-29309286" class="answer" data-answerid="29309286"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="29309286">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="4">4</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>using jquery without prototype, update the js code to </p>
+
+<pre><code>$( ".stars" ).each(function() { 
+    // Get the value
+    var val = $(this).data("rating");
+    // Make sure that the value is in 0 - 5 range, multiply to get width
+    var size = Math.max(0, (Math.min(5, val))) * 16;
+    // Create stars holder
+    var $span = $('&lt;span /&gt;').width(size);
+    // Replace the numerical value with stars
+    $(this).html($span);
+});
+</code></pre>
+
+<p>I also added a data attribute by the name of data-rating in the span.</p>
+
+<pre><code>&lt;span class="stars" data-rating="4" &gt;&lt;/span&gt;
+</code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2015-03-27T20:02:49"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/29309286" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-29309286">share</a><span class="lsep">|</span><a href="/posts/29309286/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/29309286/revisions" title="show all edits to this post">edited <span title="2015-03-27 20:16:11Z" class="relativetime">Mar 27 '15 at 20:16</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-03-27 20:02:49Z" class="relativetime">Mar 27 '15 at 20:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/1083993/galuga"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/364e901b57f30bfed240b1a2531ec3af?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/1083993/galuga">Galuga</a><span class="d-none" itemprop="name">Galuga</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">465</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-29309286" class="comments js-comments-container  dno" data-post-id="29309286">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-29309286" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="44481535"></a>
+<div id="answer-44481535" class="answer" data-answerid="44481535"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="44481535">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="1">1</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p><a href="https://jsfiddle.net/xj14v0nj/308/" rel="nofollow noreferrer">DEMO</a></p>
+
+<p>You can do it with 2 images only. 1 blank stars, 1 filled stars.</p>
+
+<p>Overlay filled image on the top of the other one. and convert rating number into percentage and use it as width of fillter image.</p>
+
+<p><a href="https://i.stack.imgur.com/cEQfe.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/cEQfe.png" alt="enter image description here"></a></p>
+
+<pre><code>.containerdiv {
+  border: 0;
+  float: left;
+  position: relative;
+  width: 300px;
+} 
+.cornerimage {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+ } 
+ img{
+   max-width: 300px;
+ }
+</code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-06-11T07:47:29"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/44481535" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-44481535">share</a><span class="lsep">|</span><a href="/posts/44481535/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2017-06-11 07:47:29Z" class="relativetime">Jun 11 '17 at 7:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/2912339/elyor"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/f8jE2.jpg?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/2912339/elyor">Elyor</a><span class="d-none" itemprop="name">Elyor</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,189</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="56 bronze badges"><span class="badge3"></span><span class="badgecount">56</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-44481535" class="comments js-comments-container  dno" data-post-id="44481535">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-44481535" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="54463891"></a>
+<div id="answer-54463891" class="answer" data-answerid="54463891"  itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="54463891">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is useful" aria-pressed="false" aria-label="up vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10z"/></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="0">0</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="This answer is not useful" aria-pressed="false" aria-label="down vote" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26z"/></svg></button>
+
+
+                <div class="js-accepted-answer-indicator grid--item fc-green-500 ta-center p4 d-none" title="loading when this answer was accepted..." tabindex="0" role="note" aria-label="accepted"><svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8z"/></svg></div>
+
+</div>
+
+            </div>
+            
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>Here's my take using JSX and font awesome, limited on only .5 accuracy, though:</p>
+
+<pre><code>       &lt;span&gt;
+          {Array(Math.floor(rating)).fill(&lt;i className="fa fa-star"&gt;&lt;/i&gt;)}
+          {(rating) - Math.floor(rating)==0 ? ('') : (&lt;i className="fa fa-star-half"&gt;&lt;/i&gt;)}
+       &lt;/span&gt;
+</code></pre>
+
+<p>First row is for whole star and second row is for half star (if any)</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2019-01-31T15:25:44"></time>
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="/a/54463891" title="short permalink to this answer" class="short-link" itemprop="url" id="link-post-54463891">share</a><span class="lsep">|</span><a href="/posts/54463891/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2019-01-31 15:25:44Z" class="relativetime">Jan 31 at 15:25</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/5912144/ardhi"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/7b3c74aa09754a6d11f4570713fe9839?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="/users/5912144/ardhi">Ardhi</a><span class="d-none" itemprop="name">Ardhi</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">724</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+    
+    <div class="post-layout--right">
+	    <div id="comments-54463891" class="comments js-comments-container  dno" data-post-id="54463891">
+            <ul class="comments-list js-comments-list"
+                    data-remaining-comments-count="0"
+                    data-canpost="false"
+                    data-cansee="true"
+                    data-comments-unavailable="false"
+                    data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-54463891" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/-1/community">Community</a><span class="mod-flair" title="moderator">&#9830;</span> <span dir="ltr"><span title="2013-01-08 20:27:45Z" class="relativetime">Jan 8 '13 at 20:27</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="/questions/tagged/jquery" class="post-tag" title="show questions tagged &#39;jquery&#39;" rel="tag">jquery</a> <a href="/questions/tagged/css" class="post-tag" title="show questions tagged &#39;css&#39;" rel="tag">css</a> <a href="/questions/tagged/rating" class="post-tag" title="show questions tagged &#39;rating&#39;" rel="tag">rating</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2009-12-31 23:56:25Z">
+                                    <b>
+                                        <time itemprop="dateCreated" datetime="2009-12-31T23:56:25">9 years, 2 months ago</time>
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>110,952 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2019-01-31 15:25:44Z">1 month ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Upcoming Events
+                </div>
+                <hr />
+    <div class="spacer bulletin-item-important">
+        
+    <div class="bulletin-item-type"><a href="https://stackoverflow.com/election" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Upcoming Events&quot;,&quot;https://stackoverflow.com/election&quot;,null,null]"><div class="favicon favicon-stackoverflow" title="Stack Overflow"></div></a></div>
+    <div class="bulletin-item-content">
+        <a href="https://stackoverflow.com/election" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Upcoming Events&quot;,&quot;https://stackoverflow.com/election&quot;,null,null]">2019 Community Moderator Election</a>
+        <div>ends <span title="2019-03-19 20:00:00Z" class="relativetime">in 6 days</span></div>
+    </div>
+    <br class="cbt" />
+</div>
+    </div>
+</div>
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar"></div>
+            <div id="hireme"></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=768595a6d237","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],smlb:[[728,90]],bmlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-smlb":'smlb',"dfp-bmlb":'bmlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!1,mlb:!1,smlb:!1,bmlb:!1,'mobile-below-question':!0};
+                clc.cmd = clc.cmd || [];
+                clc.cmd.push(function () { window.clc_request='AmTdEX5QqNYIAAAAAMRTHgACAAAAAgAAAAAeAAAAfGphdmFzY3JpcHR8anF1ZXJ5fGNzc3xyYXRpbmd8AIyZm3_T1DA7b7M'; clc.load(); });
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'so-tag':['javascript','jquery','css','rating']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/2324446" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">21</div>
+	</a>
+	<a href="/questions/2324446/how-to-build-simple-reviewing-and-5-star-rating-system?noredirect=1" class="question-hyperlink">How to build simple reviewing and 5-star rating system?</a>
+</div>
+<div class="spacer">
+	<a href="/q/4353591" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/4353591/star-rating-system-jquery?noredirect=1" class="question-hyperlink">Star Rating System (jQuery)</a>
+</div>
+<div class="spacer">
+	<a href="/q/29530680" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="/questions/29530680/how-can-i-do-the-hover-effect-like-a-rating-star-in-this-code-css-html?noredirect=1" class="question-hyperlink">how can I do the hover effect like a rating star in this code css html?</a>
+</div>
+<div class="spacer">
+	<a href="/q/28170314" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/28170314/converting-values-into-star-rating-using-jquery?noredirect=1" class="question-hyperlink">Converting values into star rating using JQuery</a>
+</div>
+<div class="spacer">
+	<a href="/q/7350096" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/7350096/populating-a-five-star-system-in-javascript-with-half-stars?noredirect=1" class="question-hyperlink">Populating a five star system in JavaScript with half stars</a>
+</div>
+<div class="spacer">
+	<a href="/q/24319444" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-6</div>
+	</a>
+	<a href="/questions/24319444/how-to-calculate-star-rating?noredirect=1" class="question-hyperlink">How to calculate star rating?</a>
+</div>
+<div class="spacer">
+	<a href="/q/2004642" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="/questions/2004642/jquery-php-how-to-display-and-get-the-average-rate-and-votes-casted?noredirect=1" class="question-hyperlink">JQuery &amp; PHP - How to display and get the average rate and votes casted?</a>
+</div>
+<div class="spacer">
+	<a href="/q/12347038" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/12347038/jquery-star-rating-and-binding-with-repeater-control?noredirect=1" class="question-hyperlink">jQuery star rating and binding with repeater control</a>
+</div>
+<div class="spacer">
+	<a href="/q/2156561" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/2156561/any-way-to-compress-this-jquery-5-star-rating-function?noredirect=1" class="question-hyperlink">Any way to compress this jquery 5 star rating function?</a>
+</div>
+<div class="spacer">
+	<a href="/q/16351822" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/16351822/how-to-work-jquery-rating-stars-using-in-java-application?noredirect=1" class="question-hyperlink">How to Work Jquery Rating Stars Using in Java Application?</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/1987524">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/1424981" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">716</div></a><a href="/questions/1424981/how-to-remove-all-css-classes-using-jquery" class="question-hyperlink">How to remove all CSS classes using jQuery?</a></div><div class="spacer"><a href="/q/5041494" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">839</div></a><a href="/questions/5041494/selecting-and-manipulating-css-pseudo-elements-such-as-before-and-after-usin" class="question-hyperlink">Selecting and manipulating CSS pseudo-elements such as ::before and ::after using jQuery</a></div><div class="spacer"><a href="/q/6304531" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">11</div></a><a href="/questions/6304531/jquery-star-rating-system-with-partial-stars" class="question-hyperlink">jQuery star rating system with partial stars</a></div><div class="spacer"><a href="/q/7011653" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/7011653/need-help-using-acts-as-rateable-with-jquery-star-rating" class="question-hyperlink">Need help using acts_as_rateable with jquery star rating</a></div><div class="spacer"><a href="/q/11617956" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/11617956/jquery-rating-stars-display-at-top-when-put-in-for-loop" class="question-hyperlink">jquery rating stars display at top when put in for loop</a></div><div class="spacer"><a href="/q/12347038" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/12347038/jquery-star-rating-and-binding-with-repeater-control" class="question-hyperlink">jQuery star rating and binding with repeater control</a></div><div class="spacer"><a href="/q/28170314" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="/questions/28170314/converting-values-into-star-rating-using-jquery" class="question-hyperlink">Converting values into star rating using JQuery</a></div><div class="spacer"><a href="/q/29530054" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="/questions/29530054/showing-selection-on-5-star-rating" class="question-hyperlink">Showing selection on 5 star rating</a></div><div class="spacer"><a href="/q/35856292" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/35856292/css-5-star-rating-system-star-span-issue" class="question-hyperlink">CSS 5 star rating System, star span issue</a></div><div class="spacer"><a href="/q/40399446" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/40399446/star-rating-system-jquery" class="question-hyperlink">Star rating system jquery</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track s-link s-link__inherit" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/181409/make-a-transparent-448448-image" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Make a transparent 448*448 image
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/141386/gravity-alteration-as-extermination-tool-viable" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Gravity alteration as extermination tool viable?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/126353/is-having-access-to-past-exams-cheating-and-if-yes-could-it-be-proven-just-by" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is having access to past exams cheating and, if yes, could it be proven just by a good grade?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="https://gaming.stackexchange.com/questions/347691/is-king-k-rools-down-throw-to-up-special-a-true-combo" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is King K. Rool&#39;s down throw to up-special a true combo?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="https://diy.stackexchange.com/questions/159700/want-to-switch-to-tankless-but-can-i-use-my-existing-wiring" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Want to switch to tankless, but can I use my existing wiring?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/325383/counter-example-to-the-existence-of-left-bousfield-localization-of-combinatorial" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Counter-example to the existence of left Bousfield localization of combinatorial model category
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="https://softwareengineering.stackexchange.com/questions/388461/does-splitting-a-potentially-monolithic-application-into-several-smaller-ones-he" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does splitting a potentially monolithic application into several smaller ones help prevent bugs?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/141252/what-injury-would-be-of-little-consequence-to-a-biped-but-terrible-for-a-quadrup" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What injury would be of little consequence to a biped but terrible for a quadruped?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/81382/playing-one-triplet-not-three" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Playing ONE triplet (not three)
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="https://diy.stackexchange.com/questions/159665/is-all-copper-pipe-pretty-much-the-same" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is all copper pipe pretty much the same?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/506070/running-a-subshell-from-the-middle-of-the-current-command" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Running a subshell from the middle of the current command
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/325397/examples-of-odd-dimensional-manifolds-that-do-not-admit-contact-structure" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Examples of odd-dimensional manifolds that do not admit contact structure
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/80640/silly-sallys-movie" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Silly Sally&#39;s Movie
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/126274/can-you-reject-a-postdoc-offer-after-the-pi-has-paid-a-large-sum-for-flights-acc" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you reject a postdoc offer after the PI has paid a large sum for flights/accommodation for your visit?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/131455/co-worker-team-leader-wants-to-inject-the-crap-software-product-of-his-friends-i" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Co-worker team leader wants to inject the crap software product of his friends into our development. What should I say to our common boss?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/131374/rejected-in-4th-interview-round-citing-insufficient-years-of-experience" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Rejected in 4th interview round citing insufficient years of experience
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/97715/why-does-deadpool-say-youre-welcome-canada-after-shooting-ryan-reynolds-in" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Deadpool say &quot;You&#39;re welcome, Canada,&quot; after shooting Ryan Reynolds in the end credits?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/232048/do-i-need-to-leave-some-extra-space-available-on-the-disk-which-my-database-log" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do I need to leave some extra space available on the disk which my database log files reside, for log backup operations to successfully occur?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/81414/identifying-the-interval-from-a-to-d%e2%99%af" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Identifying the interval from A♭ to D♯
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/200396/what-is-the-difference-between-shut-and-close" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the difference between &quot;shut&quot; and &quot;close&quot;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/9345/latest-web-browser-compatible-with-windows-98" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Latest web browser compatible with Windows 98
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/200461/however-used-in-a-conditional-clause" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    &quot;However&quot; used in a conditional clause?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/106483/life-insurance-that-covers-only-simultaneous-dual-deaths" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Life insurance that covers only simultaneous/dual deaths
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/215349/decoding-assembly-instructions-in-a-game-boy-disassembler" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Decoding assembly instructions in a Game Boy disassembler
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+
+<div id="feed-link">
+    <a href="/feeds/question/1987524" title="feed of this question and its answers">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"/></svg>
+        question feed
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/1987524/ivc/1ea7');});</script>
+<noscript><div><img src="/posts/1987524/ivc/1ea7" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+                <div class="site-footer--logo">
+
+                    
+                    <a href="https://stackoverflow.com"><svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><g><path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"/><path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"/></g></svg></a>
+                </div>
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                            <li class="-item"><a href="/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Products</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/teams" class="js-gps-track -link" 
+                                                 data-ga="[&quot;teams traffic&quot;,&quot;footer - site nav&quot;,&quot;stackoverflow.com/teams&quot;,null,{&quot;dimension4&quot;:&quot;teams&quot;}]"
+                                                 data-gps-track="footer.click({ location: 2, link: 29 })">Teams</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertising" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Advertising</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Portugu&#234;s</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la inform&#225;tica">Stack Overflow en espa&#241;ol</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (31)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo &#169; 2019 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2019.3.13.33047</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+            <script>StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })</script>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-1'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|javascript|jquery|css|rating|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    </body>
+    </html>
